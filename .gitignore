@@ -14,7 +14,7 @@ __pycache__/
 *$py.class
 *.log
 *.log.*
-
+Procfile
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
