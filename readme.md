@@ -1,6 +1,8 @@
 # Project Title
 
-One Paragraph of project description goes here
+Micro-blogging App
+
+* [Live URL](https://shielded-gorge-16816.herokuapp.com/)
 
 ## Getting Started
 
@@ -8,80 +10,86 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+alembic==1.4.2
+Babel==2.8.0
+bleach==2.0.0
+blinker==1.4
+certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
+dnspython==1.16.0
+dominate==2.5.1
+elasticsearch==7.9.1
+email-validator==1.1.1
+Flask==1.1.2
+Flask-Babel==1.0.0
+Flask-Bootstrap==3.3.7.1
+Flask-Login==0.5.0
+Flask-Mail==0.9.1
+Flask-Migrate==2.5.3
+Flask-Moment==0.10.0
+Flask-SQLAlchemy==2.4.3
+Flask-WTF==0.14.3
+guess-language-spirit==0.5.3
+idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
+Mako==1.1.3
+Markdown==2.6.9
+MarkupSafe==1.1.1
+pathlib==1.0.1
+Pootle==2.8.2
+pycountry==17.5.14
+PyJWT==1.7.1
+python-dateutil==2.8.1
+python-dotenv==0.13.0
+python-editor==1.0.4
+python-Levenshtein==0.12.0
+pytz==2020.1
+requests==2.24.0
+rq==0.8.2
+scandir==1.5
+six==1.15.0
+SQLAlchemy==1.3.17
+stemming==1.0.1
+translate-toolkit==2.2.5
+urllib3==1.25.10
+uuid==1.30
+visitor==0.1.3
+Werkzeug==1.0.1
+WTForms==2.3.1
+```
+
+A requirements.txt file has been created, use the following command to install these packages
+```
+pip install -r requirements.txt
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+1. Run your migrations with the following commands
 
 ```
-Give the example
+# flask db migrate
+# flask fb upgrade
 ```
 
-And repeat
-
+2. Compile the translations
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+# flask translate compile
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+3. Set your environment variables or alternatively create a .env file in your root folder
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web framework
+* [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - Web responsiveness and template
+* [jquery](https://api.jquery.com/) - JavaScript Library
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Miguel Grinberg
+
