@@ -14,8 +14,6 @@ __pycache__/
 *$py.class
 *.log
 *.log.*
-Procfile
-migrations
 *.DS_Store
 
 # PyInstaller
@@ -42,10 +40,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 pytestdebug.log
-
-# Translations
-*.mo
-*.pot
 
 # Flask stuff:
 instance/
