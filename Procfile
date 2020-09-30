@@ -1,1 +1,1 @@
-web: flask db upgrade; flask translate compile; python tests.py; gunicorn microblog_app:app
+web: flask db migrate; flask db upgrade; flask translate compile; python tests.py; gunicorn microblog_app:app
