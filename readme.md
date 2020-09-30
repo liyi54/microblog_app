@@ -2,7 +2,7 @@
 
 Micro-blogging App
 
-* [Live URL](https://shielded-gorge-16816.herokuapp.com/)
+* [Live URL](https://git.heroku.com/sheltered-mountain-75517.herokuapp.com/)
 
 ## Getting Started
 
