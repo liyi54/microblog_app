@@ -6,7 +6,8 @@ from app.models import User, Post
 
 class TestConfig(Config):
     TESTING = True
-    # SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    ELASTICSEARCH_URL = None
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
