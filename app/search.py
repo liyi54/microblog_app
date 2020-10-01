@@ -6,6 +6,7 @@ def add_to_index(index, object):
     payload = {}
     for field in object.__searchable__:
         payload[field] = getattr(object, field)
+    current_app.elasticsearch.indices.create(index=index, ignore=400)
     current_app.elasticsearch.index(index=index, id=object.id, body=payload)
 
 def remove_from_index(index, object):
