@@ -14,17 +14,17 @@
            {% endif %}
 
     {% if user==current_user %}
-    <p><a href="{{ url_for('edit_profile') }}"> {{ _('Edit your profile') }}</a></p>
+    <p><a href="{{ url_for('main.edit_profile') }}"> {{ _('Edit your profile') }}</a></p>
     {% elif not current_user.is_following(user) %}
         <p>
-            <form action="{{ url_for('follow', username=user.username) }}" method="POST">
+            <form action="{{ url_for('main.follow', username=user.username) }}" method="POST">
                 {{ form.hidden_tag() }}
                 {{ form.submit(value='Follow', class_='btn btn-default') }}
             </form>
         </p>
     {% else %}
         <p>
-            <form action="{{ url_for('unfollow', username=user.username) }}" method="POST">
+            <form action="{{ url_for('main.unfollow', username=user.username) }}" method="POST">
             {{ form.hidden_tag() }}
             {{ form.submit(value='Unfollow', class_='btn btn-default') }}
             </form>
@@ -35,7 +35,7 @@
     </table>
     <hr>
     {% for post in posts %}
-{% include 'partials/partials/_posts.html' %}
+{% include 'main/partials/_posts.html' %}
 {% endfor %}
     <nav aria-label="...">
         <ul class="pager">
