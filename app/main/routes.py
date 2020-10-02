@@ -108,14 +108,14 @@ def unfollow(username):
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
-            flash('User %(username)s not found', username=username)
+            flash(_('User %(username)s not found', username=username))
             return redirect(url_for('main.index'))
         if user == current_user:
             flash(_('You cannot unfollow yourself'))
             return redirect(url_for('main.user', username=username))
         current_user.unfollow(user)
         db.session.commit()
-        flash('You have unfollowed %(username)s', username=username)
+        flash(_('You have unfollowed %(username)s', username=username))
         return redirect(url_for('main.user', username=username))
     else:
         return redirect(url_for('main.index'))

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-03 00:37+0100\n"
+"POT-Creation-Date: 2020-10-03 00:42+0100\n"
 "PO-Revision-Date: 2020-08-19 23:36+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -134,7 +134,7 @@ msgstr "Tu publicación está en vivo"
 msgid "Profile successfully updated"
 msgstr "Perfil actualizado correctamente"
 
-#: app/main/routes.py:91
+#: app/main/routes.py:91 app/main/routes.py:111
 #, python-format
 msgid "User %(username)s not found"
 msgstr "El usuario %(username)s no ha sido encontrado."
@@ -151,6 +151,11 @@ msgstr "Ahora estás siguiendo %(username)s"
 #: app/main/routes.py:114
 msgid "You cannot unfollow yourself"
 msgstr "¡No te puedes dejar de seguir a tí mismo!"
+
+#: app/main/routes.py:118
+#, python-format
+msgid "You have unfollowed %(username)s"
+msgstr "Te has dejado de seguir %(username)s"
 
 #: app/templates/auth/login.html:12
 msgid "Forgot Password?"
