@@ -2,7 +2,7 @@ from app import db
 from flask import current_app
 from app.main import bp
 from flask import render_template, flash, redirect, url_for
-from .forms import EditProfileForm, FollowForm, PostForm, SearchForm
+from .forms import EditProfileForm, EmptyForm, PostForm, SearchForm
 from flask_login import current_user, login_required
 from app.models import User, Post
 from flask import request, g
@@ -54,7 +54,7 @@ def about():
 @bp.route('/user/@<username>')
 @login_required
 def user(username):
-    form = FollowForm()
+    form = EmptyForm()
     user = User.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(page, current_app.config['RESULTS_PER_PAGE'], False)
@@ -84,7 +84,7 @@ def edit_profile():
 @bp.route('/follow/@<username>', methods=['POST'])
 @login_required
 def follow(username):
-    form = FollowForm()
+    form = EmptyForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
@@ -104,7 +104,7 @@ def follow(username):
 @bp.route('/unfollow/@<username>', methods=['POST'])
 @login_required
 def unfollow(username):
-    form = FollowForm()
+    form = EmptyForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
@@ -151,3 +151,11 @@ def search():
     prev_url = url_for('main.search', q=g.search_form.q.data, page=page-1) if page > 1 else None
 
     return render_template('main/search.html', title=_('Search'), prev_url=prev_url, next_url=next_url, posts=posts)
+
+
+@bp.route('/user/@<username>/popup')
+@login_required
+def popup(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    form = EmptyForm()
+    return render_template('main/user_popup.html', form=form, user=user)

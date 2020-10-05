@@ -22,7 +22,7 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError(_('Please use a different username.'))
 
-class FollowForm(FlaskForm):
+class EmptyForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 
