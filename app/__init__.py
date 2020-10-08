@@ -30,7 +30,7 @@ def create_app(config_class=Config):
     app.elasticsearch = Elasticsearch(app.config['ELASTICSEARCH_URL']) if app.config['ELASTICSEARCH_URL'] \
         else None
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, render_as_batch=True)
     login.init_app(app)
     mail.init_app(app)
     bootstrap.init_app(app)
