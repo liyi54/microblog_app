@@ -31,7 +31,7 @@ def export_posts(user_id):
         data = []
         i = 0
         total_posts = user.posts.count()
-        for post in user.posts.order_by(Post.timestamsp.asc()):
+        for post in user.posts.order_by(Post.timestamp.asc()):
             data.append({'body': post.body,
                          'timestamp': post.timestamp.isoformat() + 'Z'})
             time.sleep(5)
