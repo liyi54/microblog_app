@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-07 03:01+0100\n"
+"POT-Creation-Date: 2020-10-18 02:33+0100\n"
 "PO-Revision-Date: 2020-08-19 23:36+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.5.0\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:22
 msgid "Please login to access this page"
 msgstr "Por favor ingrese para acceder a esta página."
 
@@ -165,13 +165,21 @@ msgstr "¡No te puedes dejar de seguir a tí mismo!"
 msgid "You have unfollowed %(username)s"
 msgstr "Te has dejado de seguir %(username)s"
 
-#: app/main/routes.py:175
+#: app/main/routes.py:176
 msgid "Your message has been sent"
 msgstr "Tu mensaje ha sido enviado"
 
-#: app/main/routes.py:177
+#: app/main/routes.py:178
 msgid "Send Message"
 msgstr "Enviar Mensaje"
+
+#: app/main/routes.py:210
+msgid "An export task is currently in progress"
+msgstr "Actualmente hay una tarea de exportación en curso"
+
+#: app/main/routes.py:212
+msgid "Exporting posts..."
+msgstr "Exportación de publicaciones"
 
 #: app/templates/auth/login.html:12
 msgid "Forgot Password?"
@@ -225,15 +233,15 @@ msgstr "Ingresar"
 msgid "Profile"
 msgstr "Perfil"
 
-#: app/templates/main/base.html:37
+#: app/templates/main/base.html:38
 msgid "Messages"
 msgstr "Mensajes"
 
-#: app/templates/main/base.html:38
+#: app/templates/main/base.html:46
 msgid "Logout"
 msgstr "Salir"
 
-#: app/templates/main/base.html:78
+#: app/templates/main/base.html:99
 msgid "Error: Could not contact server."
 msgstr "Error: El servidor no pudo ser contactado."
 
@@ -246,11 +254,11 @@ msgstr "Editar Perfil"
 msgid "Hello, %(username)s"
 msgstr "¡Hola, %(username)s!"
 
-#: app/templates/main/index.html:17 app/templates/main/user.html:49
+#: app/templates/main/index.html:17 app/templates/main/user.html:52
 msgid "Newer posts"
 msgstr "Artículos siguientes"
 
-#: app/templates/main/index.html:22 app/templates/main/user.html:54
+#: app/templates/main/index.html:22 app/templates/main/user.html:57
 msgid "Older posts"
 msgstr "Artículos previos"
 
@@ -303,7 +311,11 @@ msgstr "Ultima vez visto"
 msgid "Edit your profile"
 msgstr "Edite su perfil"
 
-#: app/templates/main/user.html:35
+#: app/templates/main/user.html:19
+msgid "Export your posts"
+msgstr "Exporta tus publicaciones"
+
+#: app/templates/main/user.html:38
 msgid "Send private message"
 msgstr "Enviar mensaje privado"
 
