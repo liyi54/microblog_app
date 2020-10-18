@@ -31,7 +31,7 @@ def export_posts(user_id):
         data = []
         i = 0
         total_posts = user.posts.count()
-        for post in user.posts.order_by(Post.timestamp.asc()):
+        for post in user.posts.order_by(Post.timestamsp.asc()):
             data.append({'body': post.body,
                          'timestamp': post.timestamp.isoformat() + 'Z'})
             time.sleep(5)
@@ -39,7 +39,7 @@ def export_posts(user_id):
             set_task_progress(100 * i // total_posts)
 
         send_email('[Microblog] Your posts', app.config['ADMINS'][0],
-                   text_body=render_template('email/export_posts.txt'), html_body=render_template(
+                   text_body=render_template('email/export_posts.txt', user=user), html_body=render_template(
                 'email/export_posts.html', user=user), recipients=[user.email], attachments=[('posts.json', 'application/json',
                                                                                    json.dumps({'posts': data},
                                                                                   indent=4))], sync=True)
