@@ -40,11 +40,11 @@ def export_posts(user_id):
 
         send_email('[Microblog] Your posts', app.config['ADMINS'][0],
                    text_body=render_template('email/export_posts.txt'), html_body=render_template(
-                'email/export_posts.html'), recipients=[user.email], attachments=[('posts.json', 'application/json',
+                'email/export_posts.html', user=user), recipients=[user.email], attachments=[('posts.json', 'application/json',
                                                                                    json.dumps({'posts': data},
                                                                                   indent=4))], sync=True)
     except:
-        app.logger.error('Unhandled exception', exec_info=sys.exc_info())
+        app.logger.error('Unhandled exception', exc_info=sys.exc_info())
     finally:
         set_task_progress(100)
 
