@@ -18,4 +18,4 @@ def send_email(subject, sender, text_body, html_body, recipients, attachments=No
     if sync:
         mail.send(msg)
     else:
-        Thread(target=send_async_email, args=(current_app.get_current_object(), msg)).start()
+        Thread(target=send_async_email, args=(current_app._get_current_object(), msg)).start()
