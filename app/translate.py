@@ -1,7 +1,8 @@
 import json
 from flask_babel import _
 from flask import current_app
-import requests, uuid
+import requests
+# import uuid
 
 def translate(text, from_lang, to_lang):
     if not current_app.config['TRANSLATOR_KEY'] or 'TRANSLATOR_KEY' not in current_app.config:
