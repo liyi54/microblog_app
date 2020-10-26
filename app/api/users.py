@@ -7,7 +7,6 @@ from app.api.errors import bad_request, error_response
 from app import db
 from flask_httpauth import HTTPBasicAuth
 from app.api.auth import token_auth
-from flask import abort
 
 basic_auth = HTTPBasicAuth()
 
@@ -83,7 +82,8 @@ def create_user():
 @token_auth.login_required
 def modify_user(id):
     if token_auth.current_user().id != id:
-        abort(403)
+        return error_response(403)
+        # abort(403)
     data = request.get_json() or {}
     user = User.query.get_or_404(id)
 
