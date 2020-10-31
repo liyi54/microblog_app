@@ -19,7 +19,10 @@ db = SQLAlchemy()    # This represents the database
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
+login.refresh_view = 'auth.login'
 login.login_message = _l('Please login to access this page')
+# login.needs_refresh_message = _l('Session timed out. Please re-login')
+
 mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()

@@ -7,8 +7,8 @@ from .email import send_password_reset_email
 from flask_login import current_user, login_user, logout_user
 from app.models import User
 from werkzeug.urls import url_parse
-from flask import request
-from flask_babel import _
+from flask import request, session
+from flask_babel import _, current_app
 
 
 @bp.route('/login', methods=['GET', 'POST'])
@@ -23,6 +23,8 @@ def login():
             flash(_('Invalid Username or Password'))
             return redirect(url_for('auth.login'))
         login_user(user, remember=form.remember_me.data)
+        session.permanent = True
+        current_app.permanent_session_lifetime = current_app.config['PERMANENT_SESSION_LIFETIME']
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc !='':    # netloc typically contains the full website domain
              return redirect(url_for('main.index'))
